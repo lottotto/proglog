@@ -63,6 +63,7 @@ func TestAgent(t *testing.T) {
 			StartJoinAddrs:  startJoinAddr,
 			ACLModelFile:    config.ACLModelFile,
 			ACLPolicyFile:   config.ACLPolicyFile,
+			Bootstrap:       i == 0, // 最初のノードだけtrueになる。本当はテストコードにロジックを入れないほうがいいと思うけど。。。
 		})
 		require.NoError(t, err)
 		agents = append(agents, agent)
